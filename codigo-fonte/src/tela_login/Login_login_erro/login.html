@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Nome - Login</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+<div class="card" id="card">
+
+  <!-- ── Logo ── -->
+  <div class="logo-wrap">
+    <div class="logo-badge">
+      <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" width="38" height="38">
+        <rect x="20" y="6"  width="8"  height="36" rx="3" fill="#5c8fc4"/>
+        <rect x="6"  y="20" width="36" height="8"  rx="3" fill="#5c8fc4"/>
+      </svg>
+    </div>
+    <div class="logo-input-wrap">
+      <input
+        class="logo-name-input"
+        type="text"
+        id="appNameInput"
+        maxlength="18"
+        placeholder="NOME"
+        autocomplete="off"
+        spellcheck="false"
+      />
+      <span class="cursor"></span>
+    </div>
+    <div class="logo-sub">SAUDE É DIVERTIDA!</div>
+  </div>
+
+  <!-- ── Mode toggle ── -->
+  <div class="mode-toggle" id="modeToggle">
+    <button class="toggle-btn active-kid" id="btnKid"    onclick="setMode('kid')">CRIANCA</button>
+    <button class="toggle-btn"            id="btnParent" onclick="setMode('parent')">RESPONSAVEL</button>
+  </div>
+
+  <!-- ── Error box (shared) ── -->
+  <div class="error-box" id="errorBox"></div>
+
+  <!-- ── Kid login form ── -->
+  <div id="kidForm" class="slide-up">
+    <div class="form-group">
+      <label class="form-label">USUARIO</label>
+      <div class="input-wrap">
+        <input class="form-input" type="text" id="kidUser" placeholder="seu apelido" autocomplete="username"/>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">SENHA</label>
+      <div class="input-wrap">
+        <input class="form-input" type="password" id="kidPass" placeholder="••••••" autocomplete="current-password"/>
+        <button class="eye-btn" onclick="togglePass('kidPass',this)" type="button">
+          <svg class="eye-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+            <circle cx="12" cy="12" r="3"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <button class="btn-submit kid-btn" id="kidSubmit" onclick="handleLogin('kid')">
+      <span class="btn-text">JOGAR!</span>
+      <div class="spinner"></div>
+    </button>
+    <div class="link-row">
+      <a href="#" onclick="playClick();showError('Peca para um responsavel redefinir!');return false;">ESQUECI A SENHA</a>
+    </div>
+  </div>
+
+  <!-- ── Parent login form ── -->
+  <div id="parentForm" style="display:none;">
+    <div class="form-group">
+      <label class="form-label">E-MAIL</label>
+      <div class="input-wrap">
+        <input class="form-input" type="email" id="parentEmail" placeholder="seu@email.com" autocomplete="email"/>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">SENHA</label>
+      <div class="input-wrap">
+        <input class="form-input" type="password" id="parentPass" placeholder="••••••" autocomplete="current-password"/>
+        <button class="eye-btn" onclick="togglePass('parentPass',this)" type="button">
+          <svg class="eye-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+            <circle cx="12" cy="12" r="3"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <button class="btn-submit parent-btn" id="parentSubmit" onclick="handleLogin('parent')">
+      <span class="btn-text">ENTRAR</span>
+      <div class="spinner"></div>
+    </button>
+    <div class="link-row split">
+      <a href="#" onclick="playClick();showError('Redefinicao por e-mail em breve!');return false;">ESQUECI A SENHA</a>
+      <a href="#" onclick="playClick();showRegister();return false;">CRIAR CONTA</a>
+    </div>
+  </div>
+
+  <!-- ── Register form (embedded, hidden by default) ── -->
+  <div id="registerForm" style="display:none;" class="slide-up">
+    <div class="form-group">
+      <label class="form-label">NOME COMPLETO</label>
+      <div class="input-wrap">
+        <input class="form-input" type="text" id="regName" placeholder="seu nome" autocomplete="name"/>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">E-MAIL</label>
+      <div class="input-wrap">
+        <input class="form-input" type="email" id="regEmail" placeholder="seu@email.com" autocomplete="email"/>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">SENHA</label>
+      <div class="input-wrap">
+        <input class="form-input" type="password" id="regPass" placeholder="••••••" autocomplete="new-password"/>
+        <button class="eye-btn" onclick="togglePass('regPass',this)" type="button">
+          <svg class="eye-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+            <circle cx="12" cy="12" r="3"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">CONFIRMAR SENHA</label>
+      <div class="input-wrap">
+        <input class="form-input" type="password" id="regPass2" placeholder="••••••" autocomplete="new-password"/>
+        <button class="eye-btn" onclick="togglePass('regPass2',this)" type="button">
+          <svg class="eye-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+            <circle cx="12" cy="12" r="3"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <button class="btn-submit register-btn" id="regSubmit" onclick="handleRegister()">
+      <span class="btn-text">CADASTRAR!</span>
+      <div class="spinner"></div>
+    </button>
+    <button class="back-btn" onclick="playClick();hideRegister();">&#8592; VOLTAR AO LOGIN</button>
+  </div>
+
+  <div class="card-footer" id="cardFooter">MEDIKIDS &copy; 2025</div>
+</div>
+
+<script src="login.js"></script>
+</body>
+</html>

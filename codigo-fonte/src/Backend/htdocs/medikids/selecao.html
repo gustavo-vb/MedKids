@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="css/style.css?v=5">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seleção</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2a7895">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Medikids">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="apple-touch-icon" href="img/icon-192.png">
+    <script src="js/pwa-register.js" defer></script>
+</head>
+<body class="protected-page child-page">
+    <header class="topo">
+        <h3 class="logo">LOGO</h3>
+
+        <nav class="navegacao">
+            <a class="clicavel" data-link="selecao.html">INÍCIO</a>
+            <a href="#" onclick="logout(); return false;">SAIR</a>
+            <img class="config-icon" src="img/configuracao_icon_2.png" alt="Configurações" onclick="abrirConfig()">
+        </nav>
+    </header>
+
+<div class="texto-topo">
+        <h3>ESCOLHA COMO VOCÊ QUER APRENDER!</h3>
+        <p>Você pode aprender sobre o seu exame de um jeito divertido!</p>
+        <p>Escolha assistir a um vídeo ou brincar com um joguinho.</p>
+    </div>
+    
+    <div class="container">
+
+        <div class="secao videos"> 
+            <h5>VÍDEOS EXPLICATIVOS</h5>
+            <p>Conteúdos visuais que mostram cada etapa do exame.</p>
+            <button class="button clicavel" data-link="videos.html">Ver vídeos!</button>
+        </div>
+
+        <div class="secao jogos">
+            <h5>JOGOS EDUCATIVOS</h5>
+            <p>Atividades interativas para aprender mais fácil.</p>
+            <button class="button clicavel" data-link="jogos.html">Jogar agora!</button>
+        </div>
+
+    </div>
+
+    <script src="js/script.js" defer></script>
+</body>
+</html>

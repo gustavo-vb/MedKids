@@ -1,0 +1,25 @@
+{
+  "name": "Medikids",
+  "short_name": "Medikids",
+  "description": "Sistema Medikids em formato de aplicativo instalável.",
+  "start_url": "./login.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#ADCDD8",
+  "theme_color": "#2a7895",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "img/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "img/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

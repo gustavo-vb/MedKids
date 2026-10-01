@@ -1,0 +1,204 @@
+body, html {
+  margin: 0;
+  background-image: url(../img/Background.png);
+  height: 100%;
+  margin: 0;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+@font-face {
+  font-family: "Pixel_font";
+  src: url("../fonts/PressStart2P.ttf")
+}
+
+h3 {
+  font-family: "Pixel_font";
+  font-size: 28px;
+  color: black;
+  text-align: center;
+  padding: 0 15px;
+}
+
+p {
+  font-family: "Pixel_font";
+  font-size: 20px;
+  color: black;
+  text-align: center;
+}
+
+.button {
+  background-color: #ffbc57;
+  color: #000000;
+  padding: 20px 40px;
+  font-size: 18px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  font-family: "Pixel_font";
+  transition: 0.2s;
+  width: 80%;
+  margin-bottom: 25px;
+  position: relative;
+  z-index: 2;
+}
+
+.button:hover,
+.secao:hover .button-inicio {
+  color: #5e17eb;
+  background-color: #c7e9f8;
+}
+
+.button:hover{
+  transform: scale(1.1);
+}
+
+.secao p {
+  max-width: 300px;
+}
+
+/* Responsividade (celular) */
+@media (max-width: 768px) {
+
+  h3 {
+    font-size: 18px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  .topIcon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .recentes-main {
+    height: 60vh;
+    padding: 15px;
+    border-radius: 20px;
+  }
+
+  .item {
+    font-size: 14px;
+    padding: 15px;
+  }
+
+  .button {
+    padding: 15px 20px;
+    font-size: 14px;
+    width: 95%;
+  }
+}
+
+.recentes-main {
+  position: relative;
+  width: 95%;
+  height: 80vh;
+  margin: 35px auto;
+  padding: 20px;
+  background: rgba(219, 245, 255, 0.6);
+  overflow-y: auto; 
+  box-sizing: border-box;
+  z-index: 1;
+
+  clip-path: polygon(
+    0px 16px,
+    8px 16px,
+    8px 8px,
+    16px 8px,
+    16px 0px,
+    calc(100% - 16px) 0px,
+    calc(100% - 16px) 8px,
+    calc(100% - 8px) 8px,
+    calc(100% - 8px) 16px,
+    100% 16px,
+
+    100% calc(100% - 16px),
+    calc(100% - 8px) calc(100% - 16px),
+    calc(100% - 8px) calc(100% - 8px),
+    calc(100% - 16px) calc(100% - 8px),
+    calc(100% - 16px) 100%,
+
+    16px 100%,
+    16px calc(100% - 8px),
+    8px calc(100% - 8px),
+    8px calc(100% - 16px),
+    0px calc(100% - 16px)
+  );
+}
+
+.topIcon {
+  width: 65px;
+  height: 60px;
+  position: relative;
+  top: 20px;
+}
+
+.item {
+  background-color: #3f589b;
+  color: #000000;
+  text-align: center;
+  font-size: 18px;
+  padding: 25px;
+  cursor: pointer;
+  font-family: "Pixel_font";
+  width: 95%;
+  margin: 10px;
+  transition: 0.1s;
+  opacity: 1;
+
+  /* remove o arredondado */
+  border: none;
+
+  /* formato 8bit */
+  clip-path: polygon(
+    0px 12px,
+    6px 12px,
+    6px 6px,
+    12px 6px,
+    12px 0px,
+    calc(100% - 12px) 0px,
+    calc(100% - 12px) 6px,
+    calc(100% - 6px) 6px,
+    calc(100% - 6px) 12px,
+    100% 12px,
+
+    100% calc(100% - 12px),
+    calc(100% - 6px) calc(100% - 12px),
+    calc(100% - 6px) calc(100% - 6px),
+    calc(100% - 12px) calc(100% - 6px),
+    calc(100% - 12px) 100%,
+
+    12px 100%,
+    12px calc(100% - 6px),
+    6px calc(100% - 6px),
+    6px calc(100% - 12px),
+    0px calc(100% - 12px)
+  );
+
+  /* borda 8bit (sem cortar nos cantos) */
+  filter: drop-shadow(0 0 0 3px #000);
+
+  transition: none; /* remove suavização */
+}
+
+@keyframes pixelFloat {
+  0%   { transform: translate(0, 0); }
+  25%  { transform: translate(-2px, -2px); }
+  50%  { transform: translate(0, -4px); }
+  75%  { transform: translate(2px, -2px); }
+  100% { transform: translate(0, 0); }
+}
+
+.item:hover {
+  background-color: #f1f8c7;
+
+  animation: pixelFloat 0.4s steps(4) infinite;
+
+  /* sombra 8bit */
+  filter: drop-shadow(2px 2px 0 #000);
+}

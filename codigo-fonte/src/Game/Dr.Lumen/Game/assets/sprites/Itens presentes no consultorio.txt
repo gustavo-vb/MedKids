@@ -1,0 +1,6 @@
+1'Estetoscopio
+2'Termometro
+3'Maca 
+4'Raio X
+5'Kit de vacinas
+6'Ursinho 

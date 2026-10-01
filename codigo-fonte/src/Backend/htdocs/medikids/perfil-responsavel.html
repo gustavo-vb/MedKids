@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="css/style.css?v=5">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil do Responsável</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2a7895">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Medikids">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="apple-touch-icon" href="img/icon-192.png">
+    <script src="js/pwa-register.js" defer></script>
+</head>
+
+<body class="perfil-page protected-page responsavel-page">
+    <header class="topo">
+        <h3 class="logo">LOGO</h3>
+
+        <nav class="navegacao">
+            <a class="clicavel" data-link="selecao.html">INÍCIO</a>
+            <a href="#" onclick="logout(); return false;">SAIR</a>
+            <img class="config-icon" src="img/configuracao_icon_2.png" alt="Configurações" onclick="abrirConfig()">
+        </nav>
+    </header>
+
+<main class="perfil-wrapper">
+
+        <section class="perfil-header">
+            <h5>PERFIL DO RESPONSÁVEL</h5>
+            <span id="nomeResponsavel">Carregando responsável...</span>
+            <p>Gerencie os perfis das crianças e acompanhe o uso da plataforma.</p>
+        </section>
+
+        <section class="perfil-container">
+
+            <form class="perfil-form" onsubmit="cadastrarCrianca(); return false;">
+                <h5>CADASTRAR CRIANÇA</h5>
+
+                <label for="criancaNome">NOME DA CRIANÇA</label>
+                <input type="text" id="criancaNome" placeholder="nome ou apelido">
+
+                <label for="criancaUsuario">USUÁRIO</label>
+                <input type="text" id="criancaUsuario" placeholder="usuario da criança">
+
+                <label for="criancaSenha">SENHA</label>
+                <input type="password" id="criancaSenha" placeholder="••••••">
+
+                <button class="button" type="submit">Cadastrar criança</button>
+
+                <p id="mensagemCrianca" class="mensagem-sistema"></p>
+            </form>
+
+            <section class="perfil-lista">
+                <h5>CRIANÇAS CADASTRADAS</h5>
+
+                <div id="listaCriancas" class="lista-criancas">
+                    <p>Carregando...</p>
+                </div>
+            </section>
+
+        </section>
+
+    </main>
+
+    <script src="js/script.js" defer></script>
+</body>
+</html>

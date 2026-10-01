@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parabéns! Etapa Concluída</title>
+<link rel="stylesheet" href="css/style.css?v=5">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2a7895">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Medikids">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="apple-touch-icon" href="img/icon-192.png">
+    <script src="js/pwa-register.js" defer></script>
+</head>
+<body class="protected-page child-page">
+    <header class="topo">
+        <h3 class="logo">LOGO</h3>
+
+        <nav class="navegacao">
+            <a class="clicavel" data-link="selecao.html">INÍCIO</a>
+            <a href="#" onclick="logout(); return false;">SAIR</a>
+            <img class="config-icon" src="img/configuracao_icon_2.png" alt="Configurações" onclick="abrirConfig()">
+        </nav>
+    </header>
+
+
+<!-- Confetti -->
+<div class="confetti-wrap" id="confetti"></div>
+
+<div class="screen">
+
+  <!-- Title bar -->
+  <div class="title-bar">
+    <h1>Parabéns! Etapa Concluída! <span class="coin">🟡</span></h1>
+    <p>Reveja as experiências incríveis que você já passou!</p>
+  </div>
+
+  <!-- Main layout -->
+  <div class="layout">
+
+    <!-- Left: video done box + stars + progress -->
+    <div class="left-panel">
+
+      <div class="video-done-box">
+        <div class="pixel-checkmark">✅</div>
+        <div class="done-label">VÍDEO CONCLUÍDO!</div>
+      </div>
+
+      <div class="stars-row">
+        <div class="star lit" id="s1">⭐</div>
+        <div class="star lit" id="s2">⭐</div>
+        <div class="star" id="s3">⭐</div>
+      </div>
+
+      <div class="progress-section">
+        <div class="progress-label">PROGRESSO DA JORNADA</div>
+        <div class="progress-track">
+          <div class="progress-fill" id="pbar"></div>
+          <div class="progress-text">2 / 3 ETAPAS</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Right: sign + nurse + desk -->
+    <div class="right-panel">
+
+      <div class="sign-reception">RECEPÇÃO</div>
+
+      <!-- Pixel nurse sprite (SVG) -->
+      <svg class="nurse-sprite" viewBox="0 0 32 48" xmlns="http://www.w3.org/2000/svg" style="image-rendering:pixelated">
+        <!-- cap -->
+        <rect x="10" y="2" width="12" height="4" fill="#ffffff"/>
+        <rect x="13" y="1" width="6" height="2" fill="#ffffff"/>
+        <rect x="14" y="2" width="2" height="2" fill="#cc3333"/>
+        <rect x="14" y="0" width="2" height="1" fill="#cc3333"/>
+        <!-- head -->
+        <rect x="10" y="6" width="12" height="10" fill="#f5c5a0"/>
+        <!-- eyes -->
+        <rect x="13" y="9" width="2" height="2" fill="#1a1a1a"/>
+        <rect x="17" y="9" width="2" height="2" fill="#1a1a1a"/>
+        <!-- smile -->
+        <rect x="13" y="13" width="6" height="1" fill="#c87040"/>
+        <rect x="12" y="12" width="2" height="1" fill="#c87040"/>
+        <rect x="18" y="12" width="2" height="1" fill="#c87040"/>
+        <!-- body -->
+        <rect x="9" y="16" width="14" height="18" fill="#ffffff"/>
+        <rect x="11" y="18" width="10" height="10" fill="#5bbfbf"/>
+        <!-- cross on body -->
+        <rect x="15" y="19" width="2" height="8" fill="#cc3333"/>
+        <rect x="13" y="22" width="6" height="2" fill="#cc3333"/>
+        <!-- arms -->
+        <rect x="5" y="16" width="4" height="14" fill="#ffffff"/>
+        <rect x="23" y="16" width="4" height="14" fill="#ffffff"/>
+        <!-- hands -->
+        <rect x="5" y="30" width="4" height="4" fill="#f5c5a0"/>
+        <rect x="23" y="30" width="4" height="4" fill="#f5c5a0"/>
+        <!-- legs -->
+        <rect x="10" y="34" width="5" height="12" fill="#cccccc"/>
+        <rect x="17" y="34" width="5" height="12" fill="#cccccc"/>
+        <!-- shoes -->
+        <rect x="9" y="44" width="6" height="4" fill="#3a3a3a"/>
+        <rect x="17" y="44" width="6" height="4" fill="#3a3a3a"/>
+      </svg>
+
+      <div class="med-desk">
+        <div class="cross-icon"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Chairs -->
+
+
+  <!-- Message box -->
+  <div class="message-box">
+    <p>Muito bem, <span class="name-highlight">PEQUENO HERÓI</span>!<br>
+    Você assistiu este vídeo e está<br>preparado para o exame!</p>
+  </div>
+
+  <!-- Buttons -->
+  <div class="buttons-row">
+    <button class="pixel-btn btn-next" onclick="nextStep()">PRÓXIMA ETAPA</button>
+    <button class="pixel-btn2 btn-menu" onclick="goMenu()">MENU PRINCIPAL</button>
+  </div>
+
+</div>
+
+<script src="js/script.js" defer></script>
+</body>
+</html>

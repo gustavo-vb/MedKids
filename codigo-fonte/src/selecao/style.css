@@ -1,0 +1,285 @@
+/* AUTOR: Clara Freitas de Oliveira :) */
+
+/* ================= RESET ================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ================= FONTE ================= */
+@font-face {
+  font-family: "Pixel_font";
+  src: url("fonts/dogicapixel.ttf");
+}
+
+/* ================= BASE ================= */
+body {
+  min-height: 100vh;
+  background-color: #ADCDD8;
+  font-family: "Pixel_font";
+  position: relative;
+  /*display: flex;
+  flex-direction: column;*/
+}
+
+/* fundo com imagem transparente */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("img/hospital.png");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.15;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* ================= TOPO ================= */
+.topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  color: #2a7895;
+  border-bottom: 4px solid #2a7895;
+  background-color: #ADCDD8;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.navegacao {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.navegacao a {
+  text-decoration: none;
+  color: #2a7895;
+  font-size: 14px;
+}
+
+.navegacao a:hover {
+  text-decoration: underline;
+}
+
+/* ================= TEXTOS ================= */
+
+
+h5 {
+  font-size: 20px;
+  color: #2a7895;
+  text-align: center;
+  line-height: 2;
+}
+
+p {
+  font-size: 16px;
+  color: #2a7895;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.texto-topo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.texto-topo h3 {
+  font-size: 28px;
+  color: #2a7895;
+  text-align: center;
+  padding: 0 15px;
+  line-height: 2;
+  margin-top: 20px;
+}
+
+/* ================= LAYOUT ================= */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+
+  flex-wrap: wrap;
+}
+
+/* ================= COMPONENTES ================= */
+
+/* caixas principais */
+.secao {
+  width: 700px;
+  height: 300px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: 0 6px 0 #115066;
+  border: 4px solid #328BA9;
+  border-radius: 60px;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+/* texto dentro das caixas */
+.secao p {
+  max-width: 300px; 
+  color: #5daac6;
+}
+
+.secao:hover{
+  transform: scale(1.05);
+}
+
+/* variações */
+.videos,
+.jogos {
+  background-color: #c9f1ff;;
+}
+
+/* botão */
+.button {
+  text-align: center; 
+  width: 350px;
+  height: 50px;
+  font-size: 18px;
+  font-family: 'Pixel_font';
+
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  margin-top: 20px;
+
+  background-color: #328BA9;
+  color: #c9f1ff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.button:hover {
+  transform: scale(1.05);
+  background-color: #297994;
+}
+
+/*.button button_sound*/
+
+/* ================= EXTRAS ================= */
+
+.voltar {
+  position: fixed;
+  top: 60px;
+  left: 20px;
+  z-index: 10;
+}
+
+/* ================= CONFIGURAÇÕES ================= */
+
+.config-icon {
+  width: 24px;
+  height: 24px;
+
+  cursor: pointer;
+
+  display: block;
+
+  transition: 0.2s;
+}
+
+.config-icon:hover {
+  transform: scale(1.4);
+}
+
+.menu-config {
+  position: absolute;
+  top: 90px;
+  right: 20px;
+  width: 300px;
+  background-color: #c9f1ff;
+  border: 4px solid #328BA9;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 6px 0 #115066;
+  display: none;
+  z-index: 100;
+}
+
+.som-toggle {
+    width: 80px;
+    height: 40px;
+    background-color: #328BA9;
+    border-radius: 999px;
+    position: relative;
+    cursor: pointer;
+    transition: 0.3s;
+    border: 3px solid #115066;
+}
+
+.toggle-bola {
+    width: 30px;
+    height: 30px;
+    background-color: #c9f1ff;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 3px;
+    transition: 0.3s;
+}
+
+/* ESTADO DESLIGADO */
+.som-toggle.desligado {
+    background-color: #115066;
+}
+
+.som-toggle.desligado .toggle-bola {
+    left: 43px;
+}
+
+/* ================= RESPONSIVO ================= */
+
+@media (max-width: 768px) {
+
+  .container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .secao {
+    height: 50vh;
+    padding: 20px;
+    max-width: 90%;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  h5 {
+    font-size: 16px;
+  }
+
+  p {
+    font-size: 12px;
+    padding: 0 10px;
+  }
+
+  .button {
+    padding: 15px 25px;
+    font-size: 14px;
+  }
+}

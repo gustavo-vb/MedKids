@@ -1,0 +1,22 @@
+# Instruções de utilização
+
+## Estratégia de Organização de Codificação 
+
+Nesse primeiro eixo do curso, para simplificar a utilização do Git e a organização das pastas e artefatos de implementação no sistema de arquivos, sugerimos que o projeto seja estruturado de modo que cada aluno trabalhe com seus arquivos nas suas respectivas pastas, identificadas por nomes das suas respectivas telas. 
+
+- Pasta src\selecao: selecao.html, style.css, script.js, jogos.html, videos.html, \fonts\..., \img\..., \sons\... - Desenvolvedor responsável: Clara Freitas de Oliveira.
+- Pasta src\recentes: \css\...; \fonts\...; \img\...; \js\...; \sons\...; Recente.html - Desenvolvedor responsável: Gustavo Vilas Boas Pereira
+- Pasta src\tela_personagens: index.html; style.css; script.js; \fontes\...; \imgs\...; \sons\... - Desenvolvedor responsável: Maria Clara de Carvalho Sousa Bertozi
+- Pasta src\tela_login: \Login_login_erro\...; \imagem\... - Desenvolvedor responsável: José Carvalho Neto
+- Pasta src\tela_de_escolhas-0.1: \IMG\...; jornada.css; jornada.js; tela_de_escolha.html - Desenvolvedor responsável: Lucas Caiaffa Paschoalini
+- Pasta src\tela_conclusao: conclusao.html - Desenvolvedor responsável: Alexsandro Bueno 
+
+## Instalação do Site
+
+O site em HTML/CSS/JS é um projeto estático. É necessário implantá-lo em um servidor web de sua preferência. Existem diversos servidores web gratuitos que podem ser utilizados, tal como GitHub Pages (GitHub.IO), Vercel, Render, Netlify, Surge.sh, entre outros. Nesse primeiro eixo, recomenda-se inclusive a utilização do GitHub Pages. [Insira o endereço eletrônico público para acessá-lo.] -> ainda a ser definido.
+
+## Histórico de versões
+
+### [0.1.0] - DD/MM/AAAA
+#### Adicionado/Atualizado/Removido
+- Relação de artefatos ...

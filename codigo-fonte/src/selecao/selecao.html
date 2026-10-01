@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seleção</title>
+</head>
+<body>
+    <header class="topo">
+        <h3 class="logo">LOGO</h3>
+
+        <div class="navegacao">
+            <a class="clicavel" data-link="contato.html">CONTATO</a>
+            <a class="clicavel" data-link="sobre.html">SOBRE</a>         
+            <img class="config-icon clicavel" src="img/configuracao_icon_2.png" 
+                alt="Configurações" onclick="abrirConfig()">
+        </div>
+    </header>
+
+    <div class="texto-topo">
+        <h3>ESCOLHA COMO VOCÊ QUER APRENDER!</h3>
+        <p>Você pode aprender sobre o seu exame de um jeito divertido!</p>
+        <p>Escolha assistir a um vídeo ou brincar com um joguinho.</p>
+    </div>
+    
+    <!-- NOVO: container -->
+    <div class="container">
+
+        <div class="secao videos"> 
+            <h5>VÍDEOS EXPLICATIVOS</h5>
+            <p>Conteúdos visuais que mostram cada etapa do exame.</p>
+            <button class="button clicavel" data-link="videos.html">Ver vídeos!</button>
+        </div>
+
+        <div class="secao jogos">
+            <h5>JOGOS EDUCATIVOS</h5>
+            <p>Atividades interativas para aprender mais fácil.</p>
+            <button class="button clicavel" data-link="jogos.html">Jogar agora!</button>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

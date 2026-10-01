@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Jornada Interativa</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="jornada.css">
+</head>
+
+<body>
+
+  <!-- Fundo hospital -->
+  <img src="img/hospital.png" class="bg">
+
+  <!-- Overlay -->
+  <div class="overlay"></div>
+
+  <!-- HEADER -->
+  <header class="header">
+
+    <div class="nav-esquerda">
+      <button onclick="voltar()">⬅ Início</button>
+    </div>
+
+    <div class="nav-centro">
+      <button onclick="abrirConquistas()">🏆 Conquistas</button>
+      <button onclick="abrirDuvidas()">❓ Dúvidas</button>
+      <button onclick="chamarResponsavel()">👨‍👩‍👧 Responsável</button>
+    </div>
+
+  </header>
+
+  <!-- CONTAINER -->
+  <div class="container" id="container">
+
+    <h1>Escolha sua aventura</h1>
+    <p id="mensagem">Explore e aprenda de forma divertida 😊</p>
+
+    <div class="cards">
+
+      <div class="card destaque" onclick="irPara('ambiente')">
+        🏥 Conhecer o consultório
+      </div>
+
+      <div class="card" onclick="irPara('exame')">
+        🧪 Entender o exame
+      </div>
+
+    </div>
+
+  </div>
+
+  <audio id="clickSound" src="sounds/click.mp3"></audio>
+  <audio id="hoverSound" src="sounds/hover.mp3"></audio>
+
+  <script src="jornada.js"></script>
+
+</body>
+</html>
